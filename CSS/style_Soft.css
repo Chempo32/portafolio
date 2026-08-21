@@ -1,0 +1,270 @@
+/* VARIABLES (Paleta de Colores) */
+:root {
+    --fondo-principal: #121212;    /* Gris Oxford profundo */
+    --fondo-tarjetas: #1e1e1e;     /* Gris Plomo */
+    --borde-tarjetas: #2c2c2c;     /* Borde */
+    
+    --texto-principal: #e0e0e0;    /* Blanco*/
+    --texto-secundario: #a0a0a0;   /* Gris medio para descripciones */
+    
+    --color-software: #64b5f6;     /* Azul Pizarra (Color principal) */
+}
+
+/* RESETEO BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    min-height: 100vh;
+}
+
+/* ESTRUCTURA GENERAL */
+.section-container {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: left;
+}
+
+.section-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: var(--color-software);
+    border-bottom: 2px solid var(--borde-tarjetas);
+    padding-bottom: 10px;
+}
+
+/* NAVEGACIÓN (Navbar) */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--fondo-tarjetas);
+    border-bottom: 1px solid var(--borde-tarjetas);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--texto-principal);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--texto-secundario);
+    transition: color 0.3s;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: var(--color-software);
+}
+
+.nav-back {
+    color: var(--color-software) !important;
+    font-weight: bold;
+}
+
+/* SECCIÓN HERO (Presentación de la página) */
+.hero {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--texto-principal);
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.8rem;
+    color: var(--color-software);
+    border: none;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--texto-secundario);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+/* BOTONES */
+.btn-primario {
+    display: inline-block;
+    background-color: var(--color-software);
+    color: var(--fondo-principal);
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-primario:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.btn-secundario {
+    display: inline-block;
+    border: 1px solid var(--color-software);
+    color: var(--color-software);
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    transition: all 0.2s;
+}
+
+.btn-secundario:hover {
+    background-color: var(--color-software);
+    color: var(--fondo-principal);
+}
+
+/* SOBRE MÍ Y HABILIDADES */
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--texto-secundario);
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skill-item {
+    background-color: var(--fondo-tarjetas);
+    border: 1px solid var(--borde-tarjetas);
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--texto-principal);
+}
+
+/* TARJETAS DE PROYECTOS */
+.projects-grid {
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.project-card {
+    background-color: var(--fondo-tarjetas);
+    border: 1px solid var(--borde-tarjetas);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-software);
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    color: var(--texto-principal);
+    margin-bottom: 15px;
+}
+
+.project-content p {
+    color: var(--texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background-color: var(--borde-tarjetas);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--texto-principal);
+}
+
+/*Footer*/
+.footer {
+    background-color: var(--fondo-tarjetas);
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid var(--borde-tarjetas);
+}
+
+.footer h2 {
+    color: var(--texto-principal);
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: var(--texto-secundario);
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    color: var(--color-software);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+}
+
+/* Estilo para el texto simple (correo y teléfono) en el footer */
+.social-links span {
+    color: var(--color-software);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
